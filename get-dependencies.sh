@@ -15,12 +15,15 @@ get-debloated-pkgs --add-common --prefer-nano
 # Comment this out if you need an AUR package
 #make-aur-package PACKAGENAME
 
-# If the application needs to be manually built that has to be done down here
+echo "Building DingusPPC..."
+echo "---------------------------------------------------------------"
+REPO="https://github.com/dingusdev/dingusppc"
+VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
+git clone --recursive --depth 1 "$REPO" ./dingusppc
+echo "$VERSION" > ~/version
 
-# if you also have to make nightly releases check for DEVEL_RELEASE = 1
-#
-# if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
-# else
-# 	regular build steps
-# fi
+mkdir -p ./AppDir/bin
+cd ./dingusppc
+cmake -S ./ -B build -D CMAKE_BUILD_TYPE=Release
+cmake --build build -j$(nproc)
+mv -v ./build/bin/dingusppc ../AppDir/bin
