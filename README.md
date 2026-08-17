@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/DingusPPC-AppImage)](https://github.com/pkgforge-dev/DingusPPC-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://github.com/pkgforge-dev.png" width="128" />
+  <img src="https://raw.githubusercontent.com/dingusdev/dingusppc/refs/heads/master/icon.png" width="128" />
 </p>
 
 
