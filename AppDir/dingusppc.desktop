@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=DingusPPC
+Exec=dingusppc
+Icon=icon
+Type=Application
+StartupWMClass=dingusppc
+Categories=Emulator
+Terminal=false
