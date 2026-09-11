@@ -22,6 +22,6 @@ git clone --recursive --depth 1 "$REPO" ./dingusppc
 echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
-cmake -S ./dingusppc -B build -D CMAKE_BUILD_TYPE=Release
+cmake -S ./dingusppc -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 mv -v ./build/bin/dingusppc ./AppDir/bin
